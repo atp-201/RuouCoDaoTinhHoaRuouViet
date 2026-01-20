@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -8,6 +7,8 @@ import AIChat from './components/AIChat';
 import Footer from './components/Footer';
 
 function App() {
+  const isLocal = import.meta.env.DEV;
+
   return (
     <div className="min-h-screen bg-stone-50">
       <Navbar />
@@ -15,7 +16,8 @@ function App() {
         <Hero />
         <ProductSection />
         <StorySection />
-        <AIChat />
+
+        {isLocal && <AIChat />}
       </main>
       <Footer />
       
